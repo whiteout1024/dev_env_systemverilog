@@ -18,3 +18,5 @@
 - https://github.com/vhda/verilog_systemverilog.vim.git
 - https://github.com/vim-airline/vim-airline.git
 - https://github.com/vim-airline/vim-airline-themes.git
+- https://github.com/tpope/vim-fugitive.git
+- https://github.com/frazrepo/vim-rainbow.git

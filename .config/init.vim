@@ -7,12 +7,21 @@ Plug 'preservim/tagbar'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vhda/verilog_systemverilog.vim'
+Plug 'frazrepo/vim-rainbow'
+Plug 'tpope/vim-fugitive'
 
 
 " 플러그인 시스템 초기화
 call plug#end()
 
+" NERDTree
+let NERDTreeShowHidden=1
 
+" airline font
+let g:airline_powerline_fonts = 1
+
+" rainbow brackets
+let g:rainbow_active = 1
 
 
 "###########################################################

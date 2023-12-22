@@ -13,3 +13,9 @@
 [submodule ".vim/plugged/vim-airline"]
 	path = .vim/plugged/vim-airline
 	url = https://github.com/vim-airline/vim-airline.git
+[submodule ".vim/plugged/vim-fugitive"]
+	path = .vim/plugged/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git
+[submodule ".vim/plugged/vim-rainbow"]
+	path = .vim/plugged/vim-rainbow
+	url = https://github.com/frazrepo/vim-rainbow.git
