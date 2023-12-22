@@ -1,0 +1,15 @@
+[submodule ".vim/plugged/nerdtree"]
+	path = .vim/plugged/nerdtree
+	url = https://github.com/preservim/nerdtree.git
+[submodule ".vim/plugged/tagbar"]
+	path = .vim/plugged/tagbar
+	url = https://github.com/preservim/tagbar.git
+[submodule ".vim/plugged/verilog_systemverilog.vim"]
+	path = .vim/plugged/verilog_systemverilog.vim
+	url = https://github.com/vhda/verilog_systemverilog.vim.git
+[submodule ".vim/plugged/vim-airline-themes"]
+	path = .vim/plugged/vim-airline-themes
+	url = https://github.com/vim-airline/vim-airline-themes.git
+[submodule ".vim/plugged/vim-airline"]
+	path = .vim/plugged/vim-airline
+	url = https://github.com/vim-airline/vim-airline.git
