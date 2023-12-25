@@ -20,3 +20,4 @@
 - https://github.com/vim-airline/vim-airline-themes.git
 - https://github.com/tpope/vim-fugitive.git
 - https://github.com/frazrepo/vim-rainbow.git
+- https://github.com/ctrlpvim/ctrlp.vim.git
