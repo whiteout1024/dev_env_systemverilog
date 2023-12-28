@@ -9,6 +9,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'vhda/verilog_systemverilog.vim'
 Plug 'frazrepo/vim-rainbow'
 Plug 'tpope/vim-fugitive'
+Plug 'ctrlpvim/ctrlp.vim'
 
 
 " 플러그인 시스템 초기화
@@ -22,6 +23,43 @@ let g:airline_powerline_fonts = 1
 
 " rainbow brackets
 let g:rainbow_active = 1
+
+let g:tagbar_type_systemverilog = {
+        \ 'ctagstype'   : 'SystemVerilog',
+        \ 'kinds'       : [
+            \ 'b:blocks:1:1',
+            \ 'c:constants:1:0',
+            \ 'e:events:1:0',
+            \ 'f:functions:1:1',
+            \ 'm:modules:0:1',
+            \ 'n:nets:1:0',
+            \ 'p:ports:1:0',
+            \ 'r:registers:1:0',
+            \ 't:tasks:1:1',
+            \ 'A:assertions:1:1',
+            \ 'C:classes:0:1',
+            \ 'V:covergroups:0:1',
+            \ 'I:interfaces:0:1',
+            \ 'M:modport:0:1',
+            \ 'K:packages:0:1',
+            \ 'P:programs:0:1',
+            \ 'R:properties:0:1',
+            \ 'T:typedefs:0:1'
+        \ ],
+        \ 'sro'         : '.',
+        \ 'kind2scope'  : {
+            \ 'm' : 'module',
+            \ 'b' : 'block',
+            \ 't' : 'task',
+            \ 'f' : 'function',
+            \ 'C' : 'class',
+            \ 'V' : 'covergroup',
+            \ 'I' : 'interface',
+            \ 'K' : 'package',
+            \ 'P' : 'program',
+            \ 'R' : 'property'
+        \ },
+    \ }
 
 
 "###########################################################
@@ -116,6 +154,26 @@ sy enable
 "set list listchars=tab:\|\ 
 
 
+function! HLNext()
+  let l:higroup = matchend(getline('.'), '\c'.@/, col('.')-1) == col('.')
+              \ ? 'SpellRare' : 'ErrorMsg'
+"              \ ? 'SpellRare' : 'IncSearch'
+"              \ ? 'ErrorMsg' : 'IncSearch'
+  let b:cur_match = matchadd(l:higroup, '\c\%#'.@/, 101)
+  redraw
+  augroup HLNext
+    autocmd CursorMoved <buffer>
+                \   execute 'silent! call matchdelete('.b:cur_match.')'
+                \ | redraw
+                \ | autocmd! HLNext
+  augroup END
+endfunction
+nnoremap <silent> * *:call HLNext()<CR>
+nnoremap <silent> # #:call HLNext()<CR>
+nnoremap <silent> n n:call HLNext()<cr>
+nnoremap <silent> N N:call HLNext()<cr>
+
+
 "###########################################################
 "   COLOR 
 "###########################################################
@@ -192,3 +250,7 @@ map <F11> :%s/^\([0-9]*\)\(\s*\)/\=repeat('0',10-len(submatch(0))).submatch(0)/g
 "Remap Ctrl+Space to Ctrl+p, Not working on SSH
 inoremap <C-Space> <C-P>
 
+
+" <Ctrl + h, l> 를 눌러서 이전, 다음 탭으로 이동
+nnoremap <silent><C-h> :tabprevious<CR>
+nnoremap <silent><C-l> :tabnext<CR>
