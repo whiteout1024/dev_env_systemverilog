@@ -22,3 +22,6 @@
 [submodule ".vim/plugged/ctrlp.vim"]
 	path = .vim/plugged/ctrlp.vim
 	url = https://github.com/ctrlpvim/ctrlp.vim
+[submodule ".vim/plugged/indentline"]
+	path = .vim/plugged/indentline
+	url = https://github.com/yggdroot/indentline

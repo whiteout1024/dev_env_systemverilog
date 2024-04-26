@@ -10,6 +10,11 @@ Plug 'vhda/verilog_systemverilog.vim'
 Plug 'frazrepo/vim-rainbow'
 Plug 'tpope/vim-fugitive'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'yggdroot/indentline'
+
+"Plug 'nathanaelkane/vim-indent-guides'
+"Plug 'tpope/vim-surround'
+"Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 
 " 플러그인 시스템 초기화
@@ -20,6 +25,7 @@ let NERDTreeShowHidden=1
 
 " airline font
 let g:airline_powerline_fonts = 1
+let g:airline_theme='wombat'
 
 " rainbow brackets
 let g:rainbow_active = 1
@@ -254,3 +260,7 @@ inoremap <C-Space> <C-P>
 " <Ctrl + h, l> 를 눌러서 이전, 다음 탭으로 이동
 nnoremap <silent><C-h> :tabprevious<CR>
 nnoremap <silent><C-l> :tabnext<CR>
+
+
+vmap <LeftRelease> "*ygv
+vmap <RightRelease> p
